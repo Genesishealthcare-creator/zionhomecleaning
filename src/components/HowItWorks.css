@@ -1,0 +1,157 @@
+.hiw {
+  padding: 5rem 0;
+  background: white;
+}
+
+.hiw__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.hiw__sub {
+  margin: 0 auto;
+}
+
+.hiw__steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.hiw__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hiw__step-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hiw__circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s;
+  z-index: 1;
+  position: relative;
+}
+
+.hiw__step:hover .hiw__circle {
+  background: var(--green);
+}
+
+.hiw__line {
+  position: absolute;
+  left: calc(50% + 30px);
+  right: calc(-50% + 30px);
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--gray-200) 0, var(--gray-200) 8px, transparent 8px, transparent 16px);
+  top: 29px;
+  z-index: 0;
+}
+
+.hiw__step-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.hiw__step-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.hiw__step-desc {
+  font-size: 0.78rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.hiw__cta-box {
+  background: var(--navy-dark);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hiw__cta-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.hiw__cta-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.hiw__cta-btns {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .hiw__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hiw__line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiw__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hiw__cta-box {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hiw__cta-btns {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw {
+    padding: 3.5rem 0;
+  }
+
+  .hiw__steps {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,239 @@
+/* =============================================
+   NAVBAR — fixed below topbar (top: 38px)
+   Transparent → white on scroll
+   ============================================= */
+
+.navbar {
+  position: fixed;
+  top: 38px; /* sits right below the fixed topbar */
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, top 0.4s ease;
+}
+
+/* Solid white on scroll */
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(23,59,114,0.1);
+  box-shadow: 0 4px 30px rgba(23,59,114,0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* On scroll, topbar may be hidden — snap to top */
+  top: 0;
+}
+
+/* On mobile where topbar is hidden */
+@media (max-width: 480px) {
+  .navbar { top: 0; }
+}
+
+/* ---- Row ---- */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+/* ---- Logo ---- */
+.navbar__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  /* Large and sharp */
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  /* Prevent blur — use high quality rendering */
+  image-rendering: auto;
+  /* White glow/shadow so logo is visible on dark hero */
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4)) brightness(1.05);
+  transition: filter 0.4s ease;
+}
+
+/* On scroll — logo on white bg, remove shadow */
+.navbar--scrolled .navbar__logo-img {
+  filter: none;
+}
+
+/* ---- Desktop nav links ---- */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-wrap: nowrap;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+  transition: all 0.25s;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.navbar__link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  text-shadow: none;
+}
+.navbar__link--active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  text-shadow: none;
+}
+
+/* Scrolled — dark links */
+.navbar--scrolled .navbar__link {
+  color: #334155;
+  text-shadow: none;
+}
+.navbar--scrolled .navbar__link:hover {
+  color: var(--navy);
+  background: #f1f5f9;
+}
+.navbar--scrolled .navbar__link--active {
+  background: var(--navy);
+  color: white !important;
+  border-color: transparent;
+}
+
+/* ---- Book Now button ---- */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.navbar__cta {
+  font-size: 0.875rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* ---- Hamburger ---- */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+.navbar--scrolled .navbar__hamburger span { background: var(--navy); }
+
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* ---- Mobile dropdown ---- */
+.navbar__mobile-cta { display: none; }
+
+/* =============================================
+   TABLET — 1024px
+   ============================================= */
+@media (max-width: 1024px) {
+  .navbar__link { font-size: 0.82rem; padding: 0.38rem 0.65rem; }
+}
+
+/* =============================================
+   MOBILE — 900px
+   ============================================= */
+@media (max-width: 900px) {
+  .navbar__hamburger { display: flex; }
+  .navbar__cta { display: none; }
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem 1.25rem 1.25rem;
+    border-top: 1px solid rgba(23,59,114,0.08);
+    box-shadow: 0 16px 40px rgba(23,59,114,0.15);
+    gap: 0.15rem;
+    z-index: 998;
+  }
+  .navbar__links--open { display: flex; }
+
+  /* Force dark text in mobile dropdown */
+  .navbar__link,
+  .navbar--scrolled .navbar__link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.72rem 1rem;
+    border-radius: 10px;
+    color: #334155 !important;
+    border: none !important;
+    background: transparent !important;
+    text-shadow: none !important;
+  }
+  .navbar__link:hover,
+  .navbar--scrolled .navbar__link:hover {
+    background: #f1f5f9 !important;
+    color: var(--navy) !important;
+  }
+  .navbar__link--active,
+  .navbar--scrolled .navbar__link--active {
+    background: var(--navy) !important;
+    color: white !important;
+  }
+  .navbar__mobile-cta {
+    display: block;
+    padding-top: 0.6rem;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 0.25rem;
+  }
+  .navbar__mobile-cta a {
+    width: 100%;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* =============================================
+   SMALL MOBILE — 480px
+   ============================================= */
+@media (max-width: 480px) {
+  .navbar__inner {
+    height: 70px;
+    padding: 0.4rem 0;
+  }
+  .navbar__logo-img {
+    height: 58px;
+  }
+}

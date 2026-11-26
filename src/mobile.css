@@ -1,0 +1,214 @@
+/* =============================================
+   GLOBAL MOBILE OVERRIDES
+   Applied across all sections for a professional
+   mobile layout on 375px–768px screens
+   ============================================= */
+
+/* ---- Typography scale down ---- */
+@media (max-width: 768px) {
+  .section-title { font-size: 1.65rem !important; }
+  .section-sub   { font-size: 0.92rem !important; }
+  .section-chip  { font-size: 0.7rem !important; }
+}
+
+/* ---- TopBar ---- */
+@media (max-width: 768px) {
+  .topbar__item:nth-child(2) { display: none; }
+}
+@media (max-width: 480px) { .topbar { display: none; } }
+
+/* =============================================
+   TRUST BAR
+   ============================================= */
+@media (max-width: 768px) {
+  .trust-bar { padding: 0.75rem 0; }
+  .trust-bar__inner {
+    gap: 0.75rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+  }
+  .trust-bar__inner::-webkit-scrollbar { display: none; }
+  .trust-bar__item { flex-shrink: 0; font-size: 0.78rem; }
+  .trust-bar__sep  { display: none; }
+}
+
+/* =============================================
+   SERVICES
+   ============================================= */
+@media (max-width: 768px) {
+  .services { padding: 3rem 0; }
+  .services__header { margin-bottom: 1.75rem; }
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.9rem !important;
+  }
+  .svc-card__img { height: 130px !important; }
+  .svc-card__body { padding: 0.85rem !important; }
+  .svc-card__body h3 { font-size: 0.85rem !important; }
+  .svc-card__body p  { font-size: 0.78rem !important; display: none; }
+}
+@media (max-width: 400px) {
+  .services__grid { grid-template-columns: 1fr !important; }
+  .svc-card__body p { display: block !important; }
+}
+
+/* =============================================
+   ABOUT
+   ============================================= */
+@media (max-width: 768px) {
+  .about { padding: 3rem 0; }
+  .about__inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .about__img-wrap img { height: 240px !important; }
+  .about__img-stat {
+    grid-template-columns: repeat(3,1fr) !important;
+    gap: 0.6rem !important;
+  }
+  .about__stat-item strong { font-size: 1.3rem !important; }
+}
+
+/* =============================================
+   WHY CHOOSE US
+   ============================================= */
+@media (max-width: 768px) {
+  .why { padding: 3rem 0; }
+  .why__grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .why-card { padding: 1.25rem !important; }
+  .why__trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.25rem !important;
+  }
+  .why__trust-item { border-right: none !important; padding: 0 !important; font-size: 0.85rem; }
+}
+@media (max-width: 540px) {
+  .why__grid { grid-template-columns: 1fr !important; }
+}
+
+/* =============================================
+   HOW IT WORKS
+   ============================================= */
+@media (max-width: 768px) {
+  .hiw { padding: 3rem 0; }
+  .hiw__steps {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    max-width: 400px;
+    margin: 0 auto 2.5rem !important;
+  }
+  .hiw__step { flex-direction: row !important; text-align: left !important; align-items: flex-start; gap: 1rem; }
+  .hiw__step-num { margin-bottom: 0 !important; flex-shrink: 0; }
+  .hiw__connector { display: none !important; }
+  .hiw__step-icon { display: none; }
+  .hiw__cta { padding: 1.5rem 1.25rem !important; }
+  .hiw__cta p { font-size: 1rem !important; }
+  .hiw__cta-btns { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .hiw__cta-btns a { justify-content: center; border-radius: 50px; }
+}
+
+/* =============================================
+   GALLERY
+   ============================================= */
+@media (max-width: 768px) {
+  .gallery { padding: 3rem 0; }
+  .gallery__grid { grid-template-columns: 1fr !important; gap: 1.1rem !important; }
+  .gallery__img-wrap img { height: 140px !important; }
+}
+
+/* =============================================
+   TESTIMONIALS
+   ============================================= */
+@media (max-width: 768px) {
+  .reviews { padding: 3rem 0; }
+  .reviews__rating-bar { flex-direction: column; gap: 0.5rem; padding: 0.85rem 1rem; }
+  .reviews__grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .review-card { padding: 1.25rem !important; }
+}
+
+/* =============================================
+   FAQ
+   ============================================= */
+@media (max-width: 768px) {
+  .faq { padding: 3rem 0; }
+  .faq__inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .faq__left { position: static !important; }
+  .faq__contact-hint { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+}
+
+/* =============================================
+   CONTACT
+   ============================================= */
+@media (max-width: 768px) {
+  .contact { padding: 3rem 0; }
+  .contact__inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .contact__form-wrap { padding: 1.5rem !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .contact__submit { padding: 0.85rem !important; }
+}
+
+/* =============================================
+   CONTACT BAR
+   ============================================= */
+@media (max-width: 768px) {
+  .cbar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .cbar__sep { display: none !important; }
+  .cbar__item strong { font-size: 0.95rem; }
+  .cbar__book {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50px;
+  }
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+@media (max-width: 768px) {
+  .footer__main { padding: 2.5rem 0 1.75rem; }
+  .footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .footer__bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+/* =============================================
+   SCROLL TO TOP
+   ============================================= */
+@media (max-width: 480px) {
+  .stt { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; }
+}
+
+/* =============================================
+   GENERAL SECTION PADDING ON MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .container { padding: 0 1.1rem; }
+}
